@@ -1,0 +1,52 @@
+# .gitignore para proyecto React (Vite / Create React App)
+# Ignorar dependencias instaladas
+node_modules/
+
+# Salidas de build / distribución
+/dist/
+/build/
+/out/
+
+# Cachés y artefactos de herramientas de bundling
+/.vite/
+.parcel-cache/
+.cache/
+
+# Archivos de entorno (conservar .env.example si existe)
+.env
+.env.*.local
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistemas y editores
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Cobertura de tests
+coverage/
+
+# Caché de linters / herramientas
+.eslintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Archivos temporales
+*.tmp
+*.temp
+*.swp
+
+# Empaquetados
+*.tgz
+
+# Evitar ignorar lockfiles (package-lock.json / yarn.lock / pnpm-lock.yaml)
+# Si usas algún sistema de monorepo o herramientas específicas, añade reglas adicionales.
