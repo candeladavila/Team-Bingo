@@ -12,6 +12,6 @@ export default defineConfig({
     port: 3000,
     // si se pone true y el puerto está en uso, Vite fallará en vez de buscar otro
     strictPort: false,
-    
+
   },
 })
