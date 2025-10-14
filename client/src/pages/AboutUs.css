@@ -113,29 +113,58 @@
   text-align: center;
   box-shadow: 0 4px 15px rgba(40, 167, 69, 0.1);
   border: 1px solid #e9ecef;
+  transition: transform 0.3s ease;
 }
 
-.member-avatar {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #28a745;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .team-member h3 {
   color: #333;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.member-role {
-  color: #28a745;
-  font-weight: 600;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-.team-member p:last-child {
-  color: #666;
-  line-height: 1.5;
-  margin: 0;
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #28a745;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 2px solid #28a745;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  background-color: #28a745;
+  color: white;
+  transform: scale(1.05);
+}
+
+.github-icon {
+  font-size: 1.2rem;
 }
 
 .story-section {
