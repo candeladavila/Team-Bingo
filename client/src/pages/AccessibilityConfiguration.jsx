@@ -79,116 +79,133 @@ function AccessibilityConfiguration() {
       </div>
 
       <div className="accessibility-content">
-        <div className="config-section">
-          <h2>Configuraciones Visuales</h2>
-          
-          <div className="config-group">
-            <label htmlFor="font-size" className="config-label">
-              Tamaño de Texto
-            </label>
-            <select 
-              id="font-size"
-              value={fontSize} 
-              onChange={(e) => setFontSize(e.target.value)}
-              className="config-select"
-            >
-              <option value="small">Pequeño</option>
-              <option value="medium">Mediano</option>
-              <option value="large">Grande</option>
-              <option value="extra-large">Extra Grande</option>
-            </select>
-          </div>
+        <div className="three-column-layout">
+          {/* Columna 1: Configuraciones Visuales */}
+          <div className="config-column">
+            <div className="config-section">
+              <h2>Configuraciones Visuales</h2>
+              
+              <div className="config-group">
+                <label htmlFor="font-size" className="config-label">
+                  Tamaño de Texto
+                </label>
+                <select 
+                  id="font-size"
+                  value={fontSize} 
+                  onChange={(e) => setFontSize(e.target.value)}
+                  className="config-select"
+                >
+                  <option value="small">Pequeño</option>
+                  <option value="medium">Mediano</option>
+                  <option value="large">Grande</option>
+                  <option value="extra-large">Extra Grande</option>
+                </select>
+              </div>
 
-          <div className="config-group">
-            <label htmlFor="contrast" className="config-label">
-              Contraste
-            </label>
-            <select 
-              id="contrast"
-              value={contrast} 
-              onChange={(e) => setContrast(e.target.value)}
-              className="config-select"
-            >
-              <option value="normal">Normal</option>
-              <option value="high">Alto Contraste</option>
-            </select>
-          </div>
-        </div>
-
-        <div className="config-section">
-          <h2>Configuraciones de Movimiento</h2>
-          
-          <div className="config-group">
-            <label className="checkbox-label">
-              <input 
-                type="checkbox" 
-                checked={motionReduced}
-                onChange={(e) => setMotionReduced(e.target.checked)}
-                className="config-checkbox"
-              />
-              <span className="checkmark"></span>
-              Reducir animaciones y movimientos
-            </label>
-            <p className="config-description">
-              Minimiza las animaciones para usuarios sensibles al movimiento
-            </p>
-          </div>
-        </div>
-
-        <div className="config-section">
-          <h2>Configuraciones de Navegación</h2>
-          
-          <div className="config-group">
-            <label className="checkbox-label">
-              <input 
-                type="checkbox" 
-                checked={keyboardNavigation}
-                onChange={(e) => setKeyboardNavigation(e.target.checked)}
-                className="config-checkbox"
-              />
-              <span className="checkmark"></span>
-              Mejorar navegación por teclado
-            </label>
-            <p className="config-description">
-              Resalta elementos enfocados para navegación con teclado
-            </p>
-          </div>
-
-          <div className="config-group">
-            <label className="checkbox-label">
-              <input 
-                type="checkbox" 
-                checked={screenReader}
-                onChange={(e) => setScreenReader(e.target.checked)}
-                className="config-checkbox"
-              />
-              <span className="checkmark"></span>
-              Optimizar para lectores de pantalla
-            </label>
-            <p className="config-description">
-              Mejora la compatibilidad con tecnologías de asistencia
-            </p>
-          </div>
-        </div>
-
-        <div className="config-section">
-          <h2>Atajos de Teclado</h2>
-          <div className="shortcuts-grid">
-            <div className="shortcut-item">
-              <span className="shortcut-key">Tab</span>
-              <span className="shortcut-description">Navegar entre elementos</span>
+              <div className="config-group">
+                <label htmlFor="contrast" className="config-label">
+                  Contraste
+                </label>
+                <select 
+                  id="contrast"
+                  value={contrast} 
+                  onChange={(e) => setContrast(e.target.value)}
+                  className="config-select"
+                >
+                  <option value="normal">Normal</option>
+                  <option value="high">Alto Contraste</option>
+                </select>
+              </div>
             </div>
-            <div className="shortcut-item">
-              <span className="shortcut-key">Enter / Espacio</span>
-              <span className="shortcut-description">Activar botones y enlaces</span>
+          </div>
+
+          {/* Columna 2: Configuraciones de Interacción */}
+          <div className="config-column">
+            <div className="config-section">
+              <h2>Configuraciones de Interacción</h2>
+              
+              <div className="config-group">
+                <label className="checkbox-label">
+                  <input 
+                    type="checkbox" 
+                    checked={motionReduced}
+                    onChange={(e) => setMotionReduced(e.target.checked)}
+                    className="config-checkbox"
+                  />
+                  <span className="checkmark"></span>
+                  Reducir animaciones
+                </label>
+                <p className="config-description">
+                  Minimiza las animaciones para usuarios sensibles al movimiento
+                </p>
+              </div>
+
+              <div className="config-group">
+                <label className="checkbox-label">
+                  <input 
+                    type="checkbox" 
+                    checked={keyboardNavigation}
+                    onChange={(e) => setKeyboardNavigation(e.target.checked)}
+                    className="config-checkbox"
+                  />
+                  <span className="checkmark"></span>
+                  Navegación por teclado
+                </label>
+                <p className="config-description">
+                  Resalta elementos enfocados para navegación con teclado
+                </p>
+              </div>
+
+              <div className="config-group">
+                <label className="checkbox-label">
+                  <input 
+                    type="checkbox" 
+                    checked={screenReader}
+                    onChange={(e) => setScreenReader(e.target.checked)}
+                    className="config-checkbox"
+                  />
+                  <span className="checkmark"></span>
+                  Lector de pantalla
+                </label>
+                <p className="config-description">
+                  Mejora la compatibilidad con tecnologías de asistencia
+                </p>
+              </div>
             </div>
-            <div className="shortcut-item">
-              <span className="shortcut-key">Esc</span>
-              <span className="shortcut-description">Cerrar menús desplegables</span>
+          </div>
+
+          {/* Columna 3: Atajos e Información */}
+          <div className="config-column">
+            <div className="config-section">
+              <h2>Atajos de Teclado</h2>
+              <div className="shortcuts-list">
+                <div className="shortcut-item">
+                  <span className="shortcut-key">Tab</span>
+                  <span className="shortcut-description">Navegar entre elementos</span>
+                </div>
+                <div className="shortcut-item">
+                  <span className="shortcut-key">Enter</span>
+                  <span className="shortcut-description">Activar elementos</span>
+                </div>
+                <div className="shortcut-item">
+                  <span className="shortcut-key">Esc</span>
+                  <span className="shortcut-description">Cerrar menús</span>
+                </div>
+                <div className="shortcut-item">
+                  <span className="shortcut-key">Ctrl +/-</span>
+                  <span className="shortcut-description">Zoom</span>
+                </div>
+              </div>
             </div>
-            <div className="shortcut-item">
-              <span className="shortcut-key">Ctrl + Plus/Minus</span>
-              <span className="shortcut-description">Aumentar/reducir zoom</span>
+
+            <div className="accessibility-info">
+              <h3>¿Necesitas ayuda?</h3>
+              <p>
+                Contacta con nosotros en <a href="mailto:accessibility@teambingo.com">accessibility@teambingo.com</a>
+              </p>
+              <p>
+                Nos comprometemos a hacer Team Bingo accesible para todos.
+              </p>
             </div>
           </div>
         </div>
@@ -206,18 +223,6 @@ function AccessibilityConfiguration() {
           >
             Restablecer por Defecto
           </button>
-        </div>
-
-        <div className="accessibility-info">
-          <h2>Información Adicional</h2>
-          <p>
-            Si tienes problemas de accesibilidad o necesitas asistencia adicional, 
-            no dudes en contactarnos en <a href="mailto:accessibility@teambingo.com">accessibility@teambingo.com</a>
-          </p>
-          <p>
-            Nos comprometemos a hacer que Team Bingo sea accesible para todos los usuarios, 
-            independientemente de sus capacidades o limitaciones.
-          </p>
         </div>
       </div>
     </div>
