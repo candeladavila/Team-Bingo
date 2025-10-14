@@ -18,9 +18,7 @@ function Navbar() {
       <div className="navbar-container">
         <div className="navbar-left">
           {/* INSERTAR IMAGEN DEL ICONO PRINCIPAL AQUÍ */}
-          {/* Ejemplo: <img src="/ruta-a-tu-logo.png" alt="Logo" className="navbar-logo" /> */}
           <Link to="/" className="navbar-logo-placeholder">
-            {/* Aquí debes insertar tu imagen del icono principal */}
             Team Bingo
           </Link>
           
@@ -29,6 +27,7 @@ function Navbar() {
               <Link to="/" className="navbar-link">Home</Link>
             </li>
             
+            {/* Dropdown Tools */}
             <li className="navbar-item dropdown">
               <button 
                 className="navbar-link dropdown-btn"
@@ -38,6 +37,7 @@ function Navbar() {
                 Tools
                 <span className={`dropdown-arrow ${showToolsDropdown ? 'open' : ''}`}>▼</span>
               </button>
+
               {showToolsDropdown && (
                 <div className="dropdown-menu">
                   <Link 
@@ -46,6 +46,15 @@ function Navbar() {
                     onClick={closeDropdown}
                   >
                     Our solution here
+                  </Link>
+
+                  {/* 👇 NUEVO LINK AL DASHBOARD */}
+                  <Link 
+                    to="/dashboard" 
+                    className="dropdown-item"
+                    onClick={closeDropdown}
+                  >
+                    Dashboard
                   </Link>
                 </div>
               )}

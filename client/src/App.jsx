@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import OurSolution from './pages/OurSolution';
 import AboutUs from './pages/AboutUs';
 import AccessibilityConfiguration from './pages/AccessibilityConfiguration';
+import DashboardPage from './pages/Dashboard'; // 👈 NUEVO IMPORT
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/our-solution" element={<OurSolution />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/accessibility" element={<AccessibilityConfiguration />} />
+            <Route path="/dashboard" element={<DashboardPage />} /> {/* 👈 NUEVA RUTA */}
           </Routes>
         </main>
       </div>
