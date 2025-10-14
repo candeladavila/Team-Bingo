@@ -1,0 +1,4 @@
+Documentos a añadir: 
+- Informe del proyecto
+- Workflow Diagram
+- KanBan board and roles
